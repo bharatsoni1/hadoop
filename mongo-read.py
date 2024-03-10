@@ -15,7 +15,7 @@ def parseInput(line):
 if __name__ == "__main__":
     spark = SparkSession.builder.appName("MongoDBIntegration").getOrCreate()
     
-    lines = spark.sparkContext.TextFile("hdfs:///user/maria_dev/mobgo_db/movies.user")
+    lines = spark.sparkContext.TextFile("hdfs:///user/maria_dev/mobgo_db/movies.user.txt")
     
     user = lines.map(parseInput)
     
